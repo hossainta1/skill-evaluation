@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ProductCart from "../../components/ProductCart/ProductCart";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,7 @@ const ProductList = () => {
         ))
       )}
     </div>
+
   );
 };
 

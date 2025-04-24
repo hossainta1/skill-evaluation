@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const ProductDetails = () => {
 
   const { name, price, image, short_desc, discount_amount, stock } = product;
 
-  // Extract details from short_desc
+  // Extract details in to API from short_desc //
   const call =
     short_desc.split("Call :")[1]?.split("WhatsApp")[0]?.trim() || "";
   const details =
@@ -37,61 +38,69 @@ const ProductDetails = () => {
   const address = short_desc.split("Visit us at:")[1]?.trim() || "";
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-base-200 p-4">
-      <div className="card bg-base-100 w-96 shadow-sm relative">
-        <figure>
-          <img
-            src={`https://admin.refabry.com/images/product/${image}`}
-            alt={name}
-            className="max-h-60 object-contain p-4"
-          />
-        </figure>
+    <>
+      {/* <SectionTitle
+        subHeading={"From 11:00 am to 10:00pm"}
+        heading={"Order Online"}
+      /> */}
 
-        <div className="p-6 space-y-4">
-          <h2 className="text-2xl font-bold text-center text-gray-800">
-            {name}
-          </h2>
+      <div className="flex justify-center items-center min-h-screen mt-0 p-4">
+        <div className="card bg-base-100 w-96 shadow-sm relative">
+          <figure>
+            <img
+              src={`https://admin.refabry.com/images/product/${image}`}
+              alt={name}
+              className="max-h-60 object-contain p-4"
+            />
+          </figure>
 
-          <p className="text-lg text-gray-700 font-semibold">
-            Price: <span className="text-green-600 font-bold">{price} TK</span>
-          </p>
+          <div className="p-6 space-y-4">
+            <h2 className="text-2xl font-bold text-center text-gray-800">
+              {name}
+            </h2>
 
-          <p className="text-gray-700">
-            <span className="font-bold">Call Us:</span> {call}
-          </p>
+            <p className="text-lg text-gray-700 font-semibold">
+              Price:{" "}
+              <span className="text-green-600 font-bold">{price} TK</span>
+            </p>
 
-          <p className="text-gray-700">
-            <span className="font-bold">Details:</span> {details}
-          </p>
+            <p className="text-gray-700">
+              <span className="font-bold">Call Us:</span> {call}
+            </p>
 
-          <p className="text-gray-700">
-            <span className="font-bold">Available Sizes:</span> {sizes}
-          </p>
+            <p className="text-gray-700">
+              <span className="font-bold">Details:</span> {details}
+            </p>
 
-          <p className="text-gray-700">
-            <span className="font-bold">Address:</span> {address}
-          </p>
+            <p className="text-gray-700">
+              <span className="font-bold">Available Sizes:</span> {sizes}
+            </p>
 
-          <div className="flex flex-wrap gap-2 pt-2">
-            <span className="badge badge-secondary">Stock: {stock}</span>
-            {discount_amount && (
-              <span className="badge badge-accent">
-                Discount: ৳{discount_amount}
-              </span>
-            )}
-          </div>
+            <p className="text-gray-700">
+              <span className="font-bold">Address:</span> {address}
+            </p>
 
-          <div className="flex justify-end gap-x-4 pt-4">
-            <Link to="" className="btn btn-primary">
-              Place Order for Purches
-            </Link>
-            <Link to="/product" className="btn btn-outline">
-              Back to product list
-            </Link>
+            <div className="flex flex-wrap gap-2 pt-2">
+              <span className="badge badge-secondary">Stock: {stock}</span>
+              {discount_amount && (
+                <span className="badge badge-accent">
+                  Discount: TK {discount_amount}
+                </span>
+              )}
+            </div>
+
+            <div className="flex justify-end gap-x-2 pt-2">
+              <Link to="" className="btn btn-primary">
+                Place Order for Purches
+              </Link>
+              <Link to="/product" className="btn btn-outline">
+                Back to product list
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -10,9 +10,9 @@ const NavBar = () => {
       <li className="text-xl text-white">
         <Link to="/product">Product</Link>
       </li>
-      <li className="text-xl text-white">
+      {/* <li className="text-xl text-white">
         <a>Mission</a>
-      </li>
+      </li> */}
     </>
   );
   return (
@@ -46,7 +46,7 @@ const NavBar = () => {
           </div>
           {/* <a className="btn btn-ghost text-xl">IWMS</a> */}
 
-          <h2 className="text-xl">IWMS</h2>
+          <h2 className="text-xl">Eplyllon Fashion</h2>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navOption}</ul>
