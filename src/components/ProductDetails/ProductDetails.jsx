@@ -90,7 +90,7 @@ const ProductDetails = () => {
             </div>
 
             <div className="flex justify-end gap-x-2 pt-2">
-              <Link to="" className="btn btn-primary">
+              <Link to="/order" className="btn btn-primary">
                 Place Order for Purches
               </Link>
               <Link to="/product" className="btn btn-outline">

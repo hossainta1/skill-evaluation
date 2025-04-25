@@ -5,6 +5,7 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home";
 import ProductList from "../pages/ProductList/ProductList";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import OrderPlace from "../components/OrderPlace/OrderPlace";
 
   export const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ import ProductDetails from "../components/ProductDetails/ProductDetails";
             path: "/product/:id",
 
             element: <ProductDetails></ProductDetails>
+        },
+
+        {
+          path: "/order",
+          element: <OrderPlace></OrderPlace>
         }
       ]
     },
