@@ -38,14 +38,14 @@ const ProductDetails = () => {
   const address = short_desc.split("Visit us at:")[1]?.trim() || "";
 
   return (
-    <>
-      {/* <SectionTitle
-        subHeading={"From 11:00 am to 10:00pm"}
-        heading={"Order Online"}
-      /> */}
+    // <>
+    //   <SectionTitle
+    //     subHeading={"From 11:00 am to 10:00pm"}
+    //     heading={"Order Online"}
+    //   />
 
-      <div className="flex justify-center items-center min-h-screen mt-0 p-4">
-        <div className="card bg-base-100 w-96 shadow-sm relative">
+      <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
+        <div className="w-full max-w-4xl mt-4 mb-3 bg-white p-8 rounded-xl shadow-lg">
           <figure>
             <img
               src={`https://admin.refabry.com/images/product/${image}`}
@@ -100,7 +100,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
